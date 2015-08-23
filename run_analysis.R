@@ -5,15 +5,14 @@ setwd("~/DS/peer3")
 datapath <- "UCI HAR Dataset"
 ## 1) Merge the training and the test sets to create one data set.
 xTrain <- read.table(paste(datapath, "train", "x_train.txt", sep="/"))
-yTrain <- read.table(paste(datapath, "train", "y_train.txt", sep="/"))
-subTrain <- read.table(paste(datapath, "train", "subject_train.txt", sep="/"))
 xTest <- read.table(paste(datapath, "test", "x_test.txt", sep="/"))
-yTest <- read.table(paste(datapath, "test", "y_test.txt", sep="/"))
-subTest <- read.table(paste(datapath, "test", "subject_test.txt", sep="/"))
 x <- rbind(xTrain, xTest)
+yTrain <- read.table(paste(datapath, "train", "y_train.txt", sep="/"))
+yTest <- read.table(paste(datapath, "test", "y_test.txt", sep="/"))
 y <- rbind(yTrain, yTest)
+subTrain <- read.table(paste(datapath, "train", "subject_train.txt", sep="/"))
+subTest <- read.table(paste(datapath, "test", "subject_test.txt", sep="/"))
 subject <- rbind(subTrain, subTest)
-
 
 ## 2) Extract only the measurements on the mean and standard deviation 
 ## for each measurement.
